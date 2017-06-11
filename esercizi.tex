@@ -4,6 +4,21 @@
 \usepackage[italian]{babel}
 
 \usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+
+\usepackage{geometry}
+
+\geometry{verbose,a4paper,tmargin=20mm,bmargin=20mm,lmargin=20mm,rmargin=20mm}
+
+\usepackage{graphicx}
+
+\usepackage{epigraph}
+
+
+\newcounter{esercizio}
+\setcounter{esercizio}{0}
+\newcommand{\Ese}{\addtocounter{esercizio}{1}\noindent{\bf Esercizio \arabic{esercizio}. } }
 
 %opening
 \title{Raccolta esercizi}
@@ -13,7 +28,322 @@
 
 \maketitle
 
-\section{Basic}
+\section{Esercizi di base}
+
+\Ese Si calcoli il numero dei possibili anagrammi per ognuna delle seguenti parole: caso, casa, satiro, teleologico, pappappero, intirizzito, disossatelo.
+
+\Ese Si calcoli il numero degli anagrammi della parola PERDENTI per ognuna delle condizioni aggiuntive date in tabella.
+
+\begin{tabular}{|l|l|}
+\hline
+senza vocali adiacenti & \phantom{rispostaacasoodelcazzo}\\
+\hline
+con esattamente una coppia di vocali adiacenti& \\
+\hline
+con P e N non adiacenti& \\
+\hline
+con R e E adiacenti& \\
+\hline
+senza consonanti isolate & \\
+\hline\end{tabular}
+
+\medskip
+
+\Ese Otto amici vanno al cinema. Sono rimasti 5 posti in una fila e 3 in quella davanti.
+\begin{enumerate}
+\item In quanti modi diversi possono sedersi?
+\item In quanti modi diversi possono sedersi sapendo che Alberto e Barbara non vogliono stare vicini?
+\item In quanti modi diversi possono sedersi sapendo che Francesco e Ludovico vogliono stare vicini?
+\item In quanti modi diversi possono sedersi sapendo che Roberto vuol stare nella fila pi\`u vicina allo schermo?
+\item In quanti modi diversi possono sedersi sapendo che Massimo vuol stare nella fila pi\`u lontana dallo schermo?
+\end{enumerate}
+
+\Ese Pescando 5 carte da un mazzo di 40 carte, qual \`e la probabilit\`a di trovarsi in mano:
+\begin{enumerate}
+\item una coppia?
+\item un tris?
+\item una doppia coppia?
+\item un full?
+\item un poker?
+\end{enumerate}
+
+\Ese Dire con quanti zeri termina l'espressione decimale di $2013!$
+
+\Ese Un millepiedi ha mille piedi, mille calzini indistinguibili e mille scarpe indistinguibili. In quanti ordini diversi pu\`o infilarsi calzini e scarpe, considerando che chiaramente un piede va infilato prima in un calzino e poi in una scarpa?
+
+	\Ese Che posizione occupa la parola \textit{coccodrillo} nella lista di tutti i suoi anagrammi disposti in ordine alfabetico?
+
+	\Ese Quanti sono i numeri che, scritti in base $10$, hanno $10$ cifre e queste sono ordinate in senso (debolmente) crescente?
+
+	\Ese Quanti sono i percorsi \textit{monotoni} che partendo da $(0,0)$ arrivano a $(n,m)$? E partendo da $(0,0,0)$ arrivano a $(m,n,p)$?
+
+	\Ese Quanti sono i percorsi \textit{monotoni} che partendo da $(0,0)$ arrivano a $(10,10)$ senza passare per $(5,5)$?
+
+	\Ese Quanti sono i percorsi \textit{monotoni} che partendo da $(0,0)$ arrivano a $(n,m)$ con $n\geq m$ senza mai toccare punti $(p,q)$ con $p<q$?
+
+	\Ese $3$ uomini e $5$ donne si siedono ad un tavolo tondo in modo che non ci siano due uomini vicini. In quanti modi possono farlo?
+
+	\Ese In quanti modi un intero $n$ pu\`o essere scritto come $a_1+\dots+a_k$ dove tutti gli $a_i$ sono interi non negativi?
+
+	\Ese In quanti modi un intero $n$ pu\`o essere scritto come somma di $3$ interi non negativi (a meno dell'ordine)?
+
+	\Ese In quanti modi si possono colorare i lati di un ottagono regolare con $8$ colori uno per lato? E usando solo bianco e nero? (due colorazioni vanno considerate indistinguibili se esiste una rotazione che manda una nell'altra)
+
+	\Ese Una pedina \`e inizialmente posta nella casella pi\`u a sinistra di uno schema $1\times 3$. Una mossa consiste nello spostare la pedina in una casella che disti al pi\`u $1$ da quella di partenza (eventualmente lasciandola ferma). Detto $s_n$ il numero dei possibili percorsi seguiti dalla pedina che impiegano $n$ mosse, mostrare che $s_{2n} = 2s_n^2+ 2s_{n-1}s_{n+1}$.
+
+	\Ese Una stringa \`e composta di $n$ lettere. Quanti sono i possibili anagrammi di questa parola per cui ogni lettera dista al pi\`u $1$ dalla posizione che occupava in origine?
+
+	\Ese Una stringa \`e composta di $n$ lettere. Quanti sono i possibili anagrammi di questa parola per cui ogni lettera dista al pi\`u $2$ dalla posizione che occupava in origine? Scrivere una ricorsione in $n$ per il numero $a_n$ dei possibili anagrammi.
+
+	\Ese Sia $X$ un insieme di $n$ elementi e $Y=\mathcal P (X)$ l'insieme delle sue parti. Calcolare le cardinalit\`a dei seguenti insiemi:
+	\begin{itemize}
+		\item $\{(A,B)\in Y^2 : A\cap B = \emptyset\}$
+		\item $\{(A,B,C)\in Y^3 : A\cap B\cap C = \emptyset \wedge A\setminus (B\cup C)=\emptyset\}$
+		\item $\{(A,B)\in Y^2 : |A\cap B|<3 \wedge |(A\cup B)^c|=1\}$
+	\end{itemize}
+
+	\Ese Sia $X$ un insieme di $n$ elementi e $Y=\mathcal P (X)$ l'insieme delle sue parti. Calcolare le seguenti somme:
+	\begin{itemize}
+		\item $\sum\limits_{(A,B)\in Y^2} |A\cup B|$
+		\item $\sum\limits_{(A,B,C)\in Y^3} |A\cap B \cap C|$
+		\item $\sum\limits_{(A,B,C)\in Y^3} |A\cap B \cup C^c|$
+		\item $\sum\limits_{(A,B,C)\in Y^3} |A\cap B \cap C|^2$
+	\end{itemize}
+
+
+\Ese Si scrivono alla lavagna gli interi da $1$ a $n$ e si effettua la seguente mossa: si scelgono $2$ interi $a$ e $b$, si cancellano, e al loro posto si scrive $|a-b|$. Dire per quali $n$, alla fine si ottiene sempre un numero dispari.
+
+\Ese Sui vertici di un $2014$-agono regolare vi sono scritti alcuni numeri interi, all'inizio tutti nulli tranne sui vertici $A_1$ e $A_3$ dove c'\`e un $1$. Una mossa consiste nell'aumentare di $1$ due vertici adiacenti o due vertici opposti. Determinare se esiste una successione finita di mosse che porta ad avere tutti i vertici con lo stesso numero.
+
+\Ese Sono dati i $3$ numeri $\{10,8,15\}$ e ad ogni mossa si rimpiazzano 2 numeri $a$ e $b$ tra quelli dati con $\frac{3a-4b}{5}$ e $\frac{4a+3b}{5}$. \`E possibile ottenere dopo un numero finito di mosse la terna $\{12,13,14\}$? E ottenere dei numeri $\{x,y,z\}$ con $|x-12|,|y-13|,|z-14|<1$?
+
+\Ese In una scatola ci sono alcune palline di colore bianco, giallo e rosso; ad ogni mossa si possono scambiare $2$ palline di un colore con una di un altro colore tra quelli dati. Partendo con $7$ bianche, $9$ gialle e $15$ rosse quali configurazioni si possono raggiungere?
+
+\Ese In ogni vertice di un $n$-agono regolare c'\`e una pedina e con una mossa se ne possono scegliere $2$ qualsiasi e spostarne una in un senso e l'altra in quello contrario. \`E possibile portarle in un unico vertice? Quale?
+
+\Ese Sono date $2014$ carte ciascuna con una faccia bianca e una nera. All'inizio sono disposte in fila tutte girate dal lato bianco. Con una mossa si pu\`o scegliere un blocco da $50$ con la pi\`u a sinistra girata sul bianco e capovolgerle tutte. Dimostrare che dopo un po' di mosse non si pu\`o pi\`u eseguirne alcuna.
+
+\Ese $n$ interi positivi sono scritti in fila. Ad ogni passaggio, se c'\`e una coppia $(x,y)$ di interi adiacenti con $x>y$ (in quest'ordine da sinistra a destra) pu\`o essere cambiata con la coppia $(y+1,x)$ oppure $(x-1,x)$. Mostrare che sono possibili sono un numero finito di passaggi.
+
+\Ese Alberto e Barbara giocano al seguente gioco: all'inizio ci sono varie pile di monete sul tavolo e ciascuno, a turno, pu\`o effettuare una mossa a scelta tra \textit{a)} togliere una moneta da una pila, \textit{b)} dividere una pila in $2$ pile ciascuna con almeno una moneta. Quando uno non pu\`o pi\`u fare una mossa, il gioco finisce. Dimostrare che il gioco termina.
+
+\Ese Nel piano sono dati $n$ punti rossi e $n$ punti verdi, a 3 a 3 non allineati. Dimostrare che esistono $n$ segmenti che non si intersecano, ciascuno dei quali congiunge $2$ punti di colore diverso.
+
+\Ese Su tutti i punti a coordinate intere nel piano viene scritto un numero naturale in modo che ciascuno sia la media dei $4$ vicini. Dimostrare che tutti i numeri sono uguali.
+
+\Ese Un numero dispari di cowboy si trovano a litigare per un bottino e, da come sono disposti (su un piano, non ci sono muri od ostacoli tra loro e le loro distanze a $2$ a $2$ sono tutte diverse) si sparano vicendevolmente, ciascuno puntando al pi\`u vicino. Dimostrare che almeno uno sopravvive. Dimostrare che i segmenti seguiti dai proiettili non formano alcuna spezzata chiusa.
+
+
+\section{Combinatoria 1}
+
+\begin{enumerate}
+	\item  Si scelgono a caso 7 interi distinti nell'insieme
+	$\{1,2,\ldots,20\}$.
+
+	Determinare la probabilit\`{a} che il secondo pi\`{u} piccolo sia 5.
+
+	\item  Determinare quanti sono i divisori positivi di
+	$$69^{5}+5\cdot 69^{4}+10\cdot 69^{3}+10\cdot 69^{2}+
+	5\cdot 69+1.$$
+
+	\item  Consideriamo una scacchiera $5\times 5$.
+
+	Determinare quanti sono i cammini che partono dal quadratino in alto
+	a sinistra, arrivano nel quadratino in basso a destra, procedono
+	sempre verso il basso o verso destra, e non passano mai per il
+	quadratino centrale.
+
+	\item  Al termine della ``regular season'' di un campionato, le
+	prime 7 classificate si sfidano in incontri di spareggio secondo
+	questa regola. La n.7 incontra la n.6: la perdente ottiene il settimo
+	premio, la vincente sfida la n.5. Dopo questo nuovo incontro, la
+	perdente ottiene il sesto premio e la vincente sfida la n.4, e
+	cos\`{\i} via.
+
+	Determinare in quanti modi le sette squadre possono ricevere i sette
+	premi.
+
+	\item  Un laboratorio ha a disposizione una bilancia a due piatti e
+	$n$ pesi da, rispettivamente, $1$, $3$, $9$, \ldots, $3^{n-1}$
+	grammi, i quali ovviamente possono essere posti indifferentemente su
+	ogni piatto della bilancia.
+
+	Determinare il numero di oggetti di peso diverso che si possono
+	pesare con questa apparecchiatura.
+
+	Determinare come cambia la risposta al punto precedente se i pesi
+	sono potenze di due o potenze di quattro.
+
+	\item  In un torneo, ogni giocatore incontra una ed una sola volta
+	tutti gli altri giocatori. In ogni incontro, il vincitore guadagna 2
+	punti, il perdente 0 punti, mentre in caso di pareggio ogni
+	giocatore riceve 1 punto. A torneo concluso risulta che esattamente
+	la met\`{a} dei punti totalizzata da ciascun giocatore \`{e} stata
+	guadagnata in partite giocate contro i 10 ultimi classificati (in
+	particolare, ciascuno dei 10 giocatori con il punteggio pi\`{u} basso
+	ha guadagnato met\`{a} dei suoi punti incontrandosi con gli altri 9
+	ultimi classificati).
+
+	Determinare il numero di giocatori che hanno partecipato al torneo.
+
+	\item  Sia $F$ l'insieme di tutte le $n$-uple $(A_{1},\ldots,A_{n})$,
+	dove ogni $A_{i}$ \`{e} un sottoinsieme di $\{1,2,\ldots,1998\}$.
+
+	Calcolare
+	$$\sum_{(A_{1},\ldots,A_{n})\in F}^{}\left|
+	A_{1}\cap\ldots\cap A_{n}\right|,
+	\hspace{4em}
+	\sum_{(A_{1},\ldots,A_{n})\in F}^{}\left|
+	A_{1}\cup\ldots\cup A_{n}\right|.$$
+
+	\item  Calcolare
+	$$\sum_{k=1}^{100}\left[10\sqrt{k}\right]+
+	\left[\frac{k^{2}}{100}\right].$$
+
+	\item Ad uno stage partecipano $n$ ragazze $G_{1},\ldots,G_{n}$ e
+	$2n-1$ ragazzi $B_{1},\ldots,B_{2n-1}$.  Per ogni $i=1,\ldots,n$,
+	la ragazza $G_{i}$ conosce i ragazzi $B_{1},\ldots,B_{2i-1}$ e
+	nessun'altro.
+
+	Dimostrare che il numero di modi di scegliere $r$ coppie
+	ragazzo-ragazza in modo che i componenti di ogni coppia si
+	conoscano \`{e}
+	$$\left(\!
+	\begin{array}{c}
+		n  \\
+		r
+	\end{array}\!
+	\right)\frac{n!}{(n-r)!}.$$
+
+	\item  Ad un party prendono parte $12k$ persone. Ciascuna di esse
+	stringe la mano ad esattamente $3k+6$ persone. Si sa che esiste un
+	numero $N$ tale che, per ogni coppia di persone $A$, $B$, il numero
+	di invitati che stringe la mano sia ad $A$ sia a $B$ \`{e}
+	esattamente $N$.
+
+	Determinare per quali valori (interi) di $k$ si pu\`{o} realizzare
+	questa situazione.
+
+\end{enumerate}
+\bigskip\bigskip
+
+\textbf{IMO Problems}: 1974/1, 1981/2, 1972/3, 1998/2, 1966/1.
+
+
+\section{Combinatoria 2}
+
+
+\begin{enumerate}
+	\item  In una popolazione il 40\% degli individui \`{e} obeso, il
+	30\% mangia 1 Kg di cioccolato al giorno e di questi l'80\% sono obesi.
+
+	Determinare la probabilit\`{a} che un obeso mangi almeno 1 Kg di
+	cioccolato al giorno.
+
+	\item  Determinare per quali $n$ \`{e} possibile piastrellare una
+	scacchiera $n\times n$ usando piastrelle a forma di ``T'' composte
+	da quattro quadratini.
+
+	\item  Consideriamo una scacchiera $11\times 11$ privata della
+	quarta casella della riga superiore.
+
+	Determinare se \`{e} possibile costruire un percorso che visiti una
+	ed una sola volta ogni casella e torni infine al punto di partenza
+	(\`{e} possibile solo muoversi tra caselle che abbiano un lato in
+	comune).
+
+	\item  Il sacchetto A ed il sacchetto B contengono 3 palline nere e
+	5 bianche, il sacchetto C contiene 5 palline nere e 3 bianche. Si
+	sceglie a caso un sacchetto, e poi da questo sacchetto vengono
+	estratte (sempre a caso) due palline, reimbussolando la pallina tra
+	la prima e la seconda estrazione.
+
+	Sapendo che le due palline estratte sono nere, determinare la
+	probabilit\`{a} che si sia scelto il sacchetto A.
+
+	\item  La regione di Matelandia \`{e} costituita da un numero finito
+	di citt\`{a}. Per garantire gli spostamenti, sono state costruite
+	delle strade che tuttavia, per motivi di budget, sono strette e a
+	senso unico. In ogni caso, per ogni coppia di citt\`{a}, esiste
+	sempre un tragitto (non necessariamente diretto) che le collega in
+	almeno uno dei due versi.
+
+	Dimostrare che esiste almeno una citt\`{a} dalla quale si pu\`{o}
+	raggiungere qualsiasi altra citt\`{a}, ed esiste almeno una citt\`{a}
+	che pu\`{o} essere raggiunta partendo da ogni altra citt\`{a}.
+
+	\item  Su un foglio di carta quadrettata si disegna un quadrato di
+	lato 2002.  Si anneriscono poi alcuni dei lati dei quadratini
+	interni (pensando cos\`{\i} di costruire delle pareti) in modo
+	per\`{o} che da ogni quadratino si possa raggiungere ogni altro
+	quadratino.
+
+	Determinare il massimo numero di lati che possono essere anneriti.
+
+	\item  Determinare se esiste una permutazione di
+	$1,1,2,2,\ldots,2001,2001,2002,2002$ tale che, per ogni $k$, vi
+	siano esattamente $k$ numeri tra le due ripetizioni di $k$.
+
+	\item  Alberto e Barbara tracciano un grafo su di un foglio ed
+	iniziano a giocare al seguente gioco. A turno, iniziando da Alberto,
+	ciascun giocatore effettua una delle seguenti due mosse:
+	\begin{itemize}
+		\item  cancellare tre segmenti che formano un triangolo;
+
+		\item  dati tre punti di cui due non collegati, ma collegati al
+		terzo, cancellare i due collegamenti presenti e unire i due punti
+		non collegati.
+	\end{itemize}
+
+	Il giocatore che non pu\`{o} fare mosse valide perde la partita.
+
+	Dimostrare che l'esito della partita non dipende da come giocano
+	Alberto e Barbara, e determinare un criterio per stabilire chi
+	vince in funzione della configurazione iniziale.
+
+	\item  Camillo \`{e} andato per un certo periodo a Lipsia, dove vive
+	in un condominio con 7 tedeschi. Ogni condomino ha un posto auto
+	riservato a lui. Camillo, da buon ita\-lia\-no, quando torna a casa
+	parcheggia in un posto a caso; ogni tedesco invece cerca di
+	parcheggiare al proprio posto, e solo se non ci riesce parcheggia
+	pure lui a caso. Un giorno Camillo rientra quando tutti gli altri
+	sono ancora fuori.
+
+	Determinare la probabilit\`{a} che l'ultimo rientrato abbia potuto
+	parcheggiare al proprio posto.
+
+	\item In una tranquilla vallata vivono dodici gnomi, i cui nomi
+	coincidono con i nomi dei mesi: Gennaio, Febbraio, \ldots,
+	Dicembre.  Ogni gnomo abita in una casetta dipinta di azzurro o di
+	rosa.
+
+	Nel mese di gennaio, lo gnomo Gennaio va a trovare tutti i suoi
+	amici.  Se nota che la maggioranza stretta dei suoi amici ha la
+	casetta di un colore diverso dalla sua, allora entro la fine del
+	mese egli ridipinge la sua casetta, cambiando il colore per
+	``adeguarsi alla maggioranza degli altri''.
+
+	Nel mese di febbraio, tocca allo gnome Febbraio fare visita ai
+	suoi amici ed eventualmente ridipingere la casetta per
+	``adeguarsi alla maggioranza'', e cos\`{\i} via.
+
+	Questa procedura si ripete di anno in anno.  Si dimostri che, da
+	un certo momento in poi, nessuno gnomo avr\`{a} pi\`{u} bisogno di
+	ridipingere la sua casetta (si supponga l'amicizia simmetrica, e che
+	ogni gnomo non includa se stesso nella lista dei suoi amici).
+
+\item Usando $n$ rette, in quante regioni si pu\`o suddividere un piano, al massimo? E usando $n$ piani per suddividere uno spazio?
+	\item $n$ partecipanti prendono parte ad una gara a punti. Finita la gara si stila la classifica in base al punteggio ottenuto da ciascuno (cosicch\'e possono esserci dei pari merito). Detto $H_n$ il numero di classifiche possibili, si scriva una ricorsione per $H_n$.
+	\item Un grafo orientato (e finito) non contiene cicli. Sia $n$ la massima lunghezza di un cammino lungo il grafo. Dimostrare che $n$ \`e il pi\`u piccolo intero per cui si possono colorari i vertici in $n$ colori in modo che $2$ vertici dello stesso colore non siano raggiungibili l'uno a partire dall'altro.
+	\item Un carico di $100$ lingotti (d'oro $24$ct) tutti da $1$kg sono disposti in $50$ sacchi, nessuno dei quali contiene pi\`u di $50$kg. Dimostrare che i sacchi possono essere divisi in $2$ carichi dello stesso peso.
+	\item Dato $n$ intero positivo, sia $P_n=\{2^n,2^{n-1}3,\dots,3^n\}$. Dato un sottoinsieme $Y\subseteq P_n$ denotiamo con $S_Y$ la somma degli elementi di $Y$. Per ogni reale $r$ con $0\leq r \leq 3^{n+1}-2^{n+1}$ dimostrare che esiste $Y\subseteq P_n$ tale che $0\leq r-S_Y\leq 2^n$.
+	\item Sono date $n$ scatole contenenti ciascuna una quantit\`a non negativa di monete. Una mossa consiste nel prelevare $2$ monete da una scatola, gettarne via una e riporre l'altra in una scatola a scelta. Una configurazione di monete \`e detta \textit{felice} se con un numero finito di mosse \`e possibile fare in modo che tutte le scatole siano non vuote. Determinare tutte le configurazioni \textit{felici}.
+
+\end{enumerate}
+\bigskip\bigskip
+
+\textbf{IMO Problems}: 1986/3, 1996/1.
+
 
 \section{Catalogo esercizi da gare internazionali}
 
