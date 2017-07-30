@@ -22,6 +22,16 @@
 
 \newcommand{\Pro}[3]{#1#2 - #3}
 
+\newcommand{\Stirling}[2]
+{
+	\left\{\!
+	\begin{array}{c}
+		#1\\
+		#2
+	\end{array}
+	\!\right\}
+}
+
 %opening
 \title{Raccolta esercizi}
 \author{}
@@ -32,6 +42,7 @@
 
 \section{Esercizi di base}
 
+%%% Conteggi %%%
 \Ese Si calcoli il numero dei possibili anagrammi per ognuna delle seguenti parole: caso, casa, satiro, teleologico, pappappero, intirizzito, disossatelo.
 
 \Ese Si calcoli il numero degli anagrammi della parola PERDENTI per ognuna delle condizioni aggiuntive date in tabella.
@@ -73,46 +84,65 @@ senza consonanti isolate & \\
 
 \Ese Un millepiedi ha mille piedi, mille calzini indistinguibili e mille scarpe indistinguibili. In quanti ordini diversi pu\`o infilarsi calzini e scarpe, considerando che chiaramente un piede va infilato prima in un calzino e poi in una scarpa?
 
-	\Ese Che posizione occupa la parola \textit{coccodrillo} nella lista di tutti i suoi anagrammi disposti in ordine alfabetico?
+\Ese Che posizione occupa la parola \textit{coccodrillo} nella lista di tutti i suoi anagrammi disposti in ordine alfabetico?
 
-	\Ese Quanti sono i numeri che, scritti in base $10$, hanno $10$ cifre e queste sono ordinate in senso (debolmente) crescente?
+\Ese Quanti sono i numeri che, scritti in base $10$, hanno $10$ cifre e queste sono ordinate in senso (debolmente) crescente?
 
-	\Ese Quanti sono i percorsi \textit{monotoni} che partendo da $(0,0)$ arrivano a $(n,m)$? E partendo da $(0,0,0)$ arrivano a $(m,n,p)$?
+\Ese Quanti sono i percorsi \textit{monotoni} che partendo da $(0,0)$ arrivano a $(n,m)$? E partendo da $(0,0,0)$ arrivano a $(m,n,p)$?
 
-	\Ese Quanti sono i percorsi \textit{monotoni} che partendo da $(0,0)$ arrivano a $(10,10)$ senza passare per $(5,5)$?
+\Ese Quanti sono i percorsi \textit{monotoni} che partendo da $(0,0)$ arrivano a $(10,10)$ senza passare per $(5,5)$?
 
-	\Ese Quanti sono i percorsi \textit{monotoni} che partendo da $(0,0)$ arrivano a $(n,m)$ con $n\geq m$ senza mai toccare punti $(p,q)$ con $p<q$?
+\Ese Quanti sono i percorsi \textit{monotoni} che partendo da $(0,0)$ arrivano a $(n,m)$ con $n\geq m$ senza mai toccare punti $(p,q)$ con $p<q$?
 
-	\Ese $3$ uomini e $5$ donne si siedono ad un tavolo tondo in modo che non ci siano due uomini vicini. In quanti modi possono farlo?
+\Ese In quanti modi \`e possibile scrivere $n$-coppie di parentesi (aperta e chiusa) in modo da rispettare le chiusure nel modo consueto (alcuna parentesi pu\`o essere chiusa prima che sia aperta)?
 
-	\Ese In quanti modi un intero $n$ pu\`o essere scritto come $a_1+\dots+a_k$ dove tutti gli $a_i$ sono interi non negativi?
+\Ese In quanti modi \`e possibile triangolare un $n$-agono convesso?
 
-	\Ese In quanti modi un intero $n$ pu\`o essere scritto come somma di $3$ interi non negativi (a meno dell'ordine)?
+\Ese $3$ uomini e $5$ donne si siedono ad un tavolo tondo in modo che non ci siano due uomini vicini. In quanti modi possono farlo?
 
-	\Ese In quanti modi si possono colorare i lati di un ottagono regolare con $8$ colori uno per lato? E usando solo bianco e nero? (due colorazioni vanno considerate indistinguibili se esiste una rotazione che manda una nell'altra)
+\Ese In quanti modi un intero $n$ pu\`o essere scritto come $a_1+\dots+a_k$ dove tutti gli $a_i$ sono interi non negativi?
 
-	\Ese Una pedina \`e inizialmente posta nella casella pi\`u a sinistra di uno schema $1\times 3$. Una mossa consiste nello spostare la pedina in una casella che disti al pi\`u $1$ da quella di partenza (eventualmente lasciandola ferma). Detto $s_n$ il numero dei possibili percorsi seguiti dalla pedina che impiegano $n$ mosse, mostrare che $s_{2n} = 2s_n^2+ 2s_{n-1}s_{n+1}$.
+\Ese In quanti modi un intero $n$ pu\`o essere scritto come somma di $3$ interi non negativi (a meno dell'ordine)?
 
-	\Ese Una stringa \`e composta di $n$ lettere. Quanti sono i possibili anagrammi di questa parola per cui ogni lettera dista al pi\`u $1$ dalla posizione che occupava in origine?
+\Ese In quanti modi si possono colorare i lati di un ottagono regolare con $8$ colori uno per lato? E usando solo bianco e nero? (due colorazioni vanno considerate indistinguibili se esiste una rotazione che manda una nell'altra)
 
-	\Ese Una stringa \`e composta di $n$ lettere. Quanti sono i possibili anagrammi di questa parola per cui ogni lettera dista al pi\`u $2$ dalla posizione che occupava in origine? Scrivere una ricorsione in $n$ per il numero $a_n$ dei possibili anagrammi.
+\Ese Una pedina \`e inizialmente posta nella casella pi\`u a sinistra di uno schema $1\times 3$. Una mossa consiste nello spostare la pedina in una casella che disti al pi\`u $1$ da quella di partenza (eventualmente lasciandola ferma). Detto $s_n$ il numero dei possibili percorsi seguiti dalla pedina che impiegano $n$ mosse, mostrare che $s_{2n} = 2s_n^2+ 2s_{n-1}s_{n+1}$.
 
-	\Ese Sia $X$ un insieme di $n$ elementi e $Y=\mathcal P (X)$ l'insieme delle sue parti. Calcolare le cardinalit\`a dei seguenti insiemi:
-	\begin{itemize}
-		\item $\{(A,B)\in Y^2 : A\cap B = \emptyset\}$
-		\item $\{(A,B,C)\in Y^3 : A\cap B\cap C = \emptyset \wedge A\setminus (B\cup C)=\emptyset\}$
-		\item $\{(A,B)\in Y^2 : |A\cap B|<3 \wedge |(A\cup B)^c|=1\}$
-	\end{itemize}
+\Ese Una stringa \`e composta di $n$ lettere. Quanti sono i possibili anagrammi di questa parola per cui ogni lettera dista al pi\`u $1$ dalla posizione che occupava in origine?
 
-	\Ese Sia $X$ un insieme di $n$ elementi e $Y=\mathcal P (X)$ l'insieme delle sue parti. Calcolare le seguenti somme:
-	\begin{itemize}
-		\item $\sum\limits_{(A,B)\in Y^2} |A\cup B|$
-		\item $\sum\limits_{(A,B,C)\in Y^3} |A\cap B \cap C|$
-		\item $\sum\limits_{(A,B,C)\in Y^3} |A\cap B \cup C^c|$
-		\item $\sum\limits_{(A,B,C)\in Y^3} |A\cap B \cap C|^2$
-	\end{itemize}
+\Ese Una stringa \`e composta di $n$ lettere. Quanti sono i possibili anagrammi di questa parola per cui ogni lettera dista al pi\`u $2$ dalla posizione che occupava in origine? Scrivere una ricorsione in $n$ per il numero $a_n$ dei possibili anagrammi.
 
+%%% Double Counting %%%
+\Ese Sia $X$ un insieme di $n$ elementi e $Y=\mathcal P (X)$ l'insieme delle sue parti. Calcolare le cardinalit\`a dei seguenti insiemi:
+\begin{itemize}
+	\item $\{(A,B)\in Y^2 : A\cap B = \emptyset\}$
+	\item $\{(A,B,C)\in Y^3 : A\cap B\cap C = \emptyset \wedge A\setminus (B\cup C)=\emptyset\}$
+	\item $\{(A,B)\in Y^2 : |A\cap B|<3 \wedge |(A\cup B)^c|=1\}$
+\end{itemize}
 
+\Ese Sia $X$ un insieme di $n$ elementi e $Y=\mathcal P (X)$ l'insieme delle sue parti. Calcolare le seguenti somme:
+\begin{itemize}
+	\item $\sum\limits_{(A,B)\in Y^2} |A\cup B|$
+	\item $\sum\limits_{(A,B,C)\in Y^3} |A\cap B \cap C|$
+	\item $\sum\limits_{(A,B,C)\in Y^3} |A\cap B \cup C^c|$
+	\item $\sum\limits_{(A,B,C)\in Y^3} |A\cap B \cap C|^2$
+\end{itemize}
+
+\Ese Calcolare le seguenti somme:
+\begin{itemize}
+	\item $\sum\limits_{k=1}^n \binom{n}{k}k^2$
+	\item $\sum\limits_{k=1}^n \binom{n}{k}k^3$
+	\item $\sum\limits_{k=0}^r \binom{n+k}{k}$
+\end{itemize}
+
+\Ese Dimostrare le seguenti identit\`a:
+\begin{itemize}
+	\item $\binom{n}{k} = \frac n {n-s}\binom{n-1}{k} = \frac n s \binom{n-1}{k-1}$
+	\item $\sum\limits_{k=0}^n \binom{n}{k}^2 = \binom{2n}{n}$
+	\item $\sum\limits_{k=0, k\text{ pari}}^n \binom{n}{k} = \sum\limits_{k=1, k\text{ dispari}}^n \binom{n}{k}$
+\end{itemize}
+
+%%% Invarianti %%%
 \Ese Si scrivono alla lavagna gli interi da $1$ a $n$ e si effettua la seguente mossa: si scelgono $2$ interi $a$ e $b$, si cancellano, e al loro posto si scrive $|a-b|$. Dire per quali $n$, alla fine si ottiene sempre un numero dispari.
 
 \Ese Sui vertici di un $2014$-agono regolare vi sono scritti alcuni numeri interi, all'inizio tutti nulli tranne sui vertici $A_1$ e $A_3$ dove c'\`e un $1$. Una mossa consiste nell'aumentare di $1$ due vertici adiacenti o due vertici opposti. Determinare se esiste una successione finita di mosse che porta ad avere tutti i vertici con lo stesso numero.
@@ -121,19 +151,27 @@ senza consonanti isolate & \\
 
 \Ese In una scatola ci sono alcune palline di colore bianco, giallo e rosso; ad ogni mossa si possono scambiare $2$ palline di un colore con una di un altro colore tra quelli dati. Partendo con $7$ bianche, $9$ gialle e $15$ rosse quali configurazioni si possono raggiungere?
 
-\Ese In ogni vertice di un $n$-agono regolare c'\`e una pedina e con una mossa se ne possono scegliere $2$ qualsiasi e spostarne una in un senso e l'altra in quello contrario. \`E possibile portarle in un unico vertice? Quale?
+\Ese In ogni vertice di un $n$-agono regolare c'\`e una pedina e con una mossa se ne possono scegliere $2$ qualsiasi e spostarne una in un senso e l'altra in quello contrario. \`E possibile portarle in un unico vertice?
+
+\Ese In ogni vertice di un $n$-agono regolare ci sono alcune pedine. Su un vertice ce n'è una, su quello successivo $2$, su quello ulteriore $3$ e così via fino all'ultimo dove ce ne sono $n$. Ancora una volta con una mossa si possono scegliere $2$ qualsiasi pedine e spostarne una in un senso e l'altra in quello contrario. In quali vertici \`e possibile spostarle tutte?
 
 \Ese Sono date $2014$ carte ciascuna con una faccia bianca e una nera. All'inizio sono disposte in fila tutte girate dal lato bianco. Con una mossa si pu\`o scegliere un blocco da $50$ con la pi\`u a sinistra girata sul bianco e capovolgerle tutte. Dimostrare che dopo un po' di mosse non si pu\`o pi\`u eseguirne alcuna.
 
-\Ese $n$ interi positivi sono scritti in fila. Ad ogni passaggio, se c'\`e una coppia $(x,y)$ di interi adiacenti con $x>y$ (in quest'ordine da sinistra a destra) pu\`o essere cambiata con la coppia $(y+1,x)$ oppure $(x-1,x)$. Mostrare che sono possibili sono un numero finito di passaggi.
-
 \Ese Alberto e Barbara giocano al seguente gioco: all'inizio ci sono varie pile di monete sul tavolo e ciascuno, a turno, pu\`o effettuare una mossa a scelta tra \textit{a)} togliere una moneta da una pila, \textit{b)} dividere una pila in $2$ pile ciascuna con almeno una moneta. Quando uno non pu\`o pi\`u fare una mossa, il gioco finisce. Dimostrare che il gioco termina.
 
+%%% Colorazioni %%%
+\Ese \`E possibile formare un rettangolo usando i $6$ trimini del classico tetris?
+
+\Ese Per quali interi positivi $(n,m)$ \`e possibile tassellare un rettangolo $n\times m$ con tessere $1 \times 6$? E usando tessere $1 \times k$?
+
+\Ese Un quadrato $7 \times 7$ \`e ricoperto da $16$ tessere $1 \times 3$ non sovrapposte. In quali caselle pu\`o capitare l'unico buco $1\times 1$ rimanente?
+
+%%% Principio dell'estremale %%%
 \Ese Nel piano sono dati $n$ punti rossi e $n$ punti verdi, a 3 a 3 non allineati. Dimostrare che esistono $n$ segmenti che non si intersecano, ciascuno dei quali congiunge $2$ punti di colore diverso.
 
 \Ese Su tutti i punti a coordinate intere nel piano viene scritto un numero naturale in modo che ciascuno sia la media dei $4$ vicini. Dimostrare che tutti i numeri sono uguali.
 
-\Ese Un numero dispari di cowboy si trovano a litigare per un bottino e, da come sono disposti (su un piano, non ci sono muri od ostacoli tra loro e le loro distanze a $2$ a $2$ sono tutte diverse) si sparano vicendevolmente, ciascuno puntando al pi\`u vicino. Dimostrare che almeno uno sopravvive. Dimostrare che i segmenti seguiti dai proiettili non formano alcuna spezzata chiusa.
+\Ese Un numero dispari di cowboy, tutti che giacciono su un piano, si trovano a litigare per un bottino e tutti si sparano vicendevolmente e contemporaneamente, ciascuno puntando al pi\`u vicino (non ci sono muri od ostacoli tra loro e le loro distanze a $2$ a $2$ sono tutte diverse). Dimostrare che almeno uno sopravvive. Dimostrare che i segmenti seguiti dai proiettili non formano alcuna spezzata chiusa.
 
 
 \section{Combinatoria 1}
@@ -225,6 +263,29 @@ senza consonanti isolate & \\
 
 	Determinare per quali valori (interi) di $k$ si pu\`{o} realizzare
 	questa situazione.
+
+	\item $n$ partecipanti prendono parte ad una gara a punti. Finita la
+	gara si stila la classifica in base al punteggio ottenuto da ciascuno
+	(cosicch\'e possono esserci dei pari merito). Detto $A_n$ il numero di
+	classifiche possibili, si scriva una ricorsione per la successione $A_n$.
+	
+	\item Dati interi positivi $n > r$, sia
+	$$ \Stirling n r =
+	|\{\text{partizioni di } \{1,\dots,n\} \text{ in } r \text{ sottoinsiemi non vuoti}\}|.$$
+	Dimostrare che:
+	\begin{eqnarray*}
+		\Stirling n 1 = \Stirling n n = 1\\
+		
+		\Stirling{n+1}{r} = \Stirling{n}{r-1} +	r \Stirling n r \\
+		
+		\sum_{k=1}^{n} k^r = \sum_{i=1}^{r} \Stirling{r}{i} i! \binom{n+1}{i+1}
+	\end{eqnarray*}
+	
+	\item Data una successione $a_1, \dots, a_n$ chiamiamo $r$-somma una
+	qualsiasi somma di $r$ termini successivi. Fissati degli interi $(t,q)$,
+	quanti termini pu\`o avere, al massimo, una successione tale che ogni
+	$t$-somma sia negativa e ogni $q$-somma sia positiva?
+
 
 \end{enumerate}
 \bigskip\bigskip
@@ -334,12 +395,37 @@ senza consonanti isolate & \\
 	ridipingere la sua casetta (si supponga l'amicizia simmetrica, e che
 	ogni gnomo non includa se stesso nella lista dei suoi amici).
 
-\item Usando $n$ rette, in quante regioni si pu\`o suddividere un piano, al massimo? E usando $n$ piani per suddividere uno spazio?
-	\item $n$ partecipanti prendono parte ad una gara a punti. Finita la gara si stila la classifica in base al punteggio ottenuto da ciascuno (cosicch\'e possono esserci dei pari merito). Detto $H_n$ il numero di classifiche possibili, si scriva una ricorsione per $H_n$.
-	\item Un grafo orientato (e finito) non contiene cicli. Sia $n$ la massima lunghezza di un cammino lungo il grafo. Dimostrare che $n$ \`e il pi\`u piccolo intero per cui si possono colorari i vertici in $n$ colori in modo che $2$ vertici dello stesso colore non siano raggiungibili l'uno a partire dall'altro.
-	\item Un carico di $100$ lingotti (d'oro $24$ct) tutti da $1$kg sono disposti in $50$ sacchi, nessuno dei quali contiene pi\`u di $50$kg. Dimostrare che i sacchi possono essere divisi in $2$ carichi dello stesso peso.
-	\item Dato $n$ intero positivo, sia $P_n=\{2^n,2^{n-1}3,\dots,3^n\}$. Dato un sottoinsieme $Y\subseteq P_n$ denotiamo con $S_Y$ la somma degli elementi di $Y$. Per ogni reale $r$ con $0\leq r \leq 3^{n+1}-2^{n+1}$ dimostrare che esiste $Y\subseteq P_n$ tale che $0\leq r-S_Y\leq 2^n$.
-	\item Sono date $n$ scatole contenenti ciascuna una quantit\`a non negativa di monete. Una mossa consiste nel prelevare $2$ monete da una scatola, gettarne via una e riporre l'altra in una scatola a scelta. Una configurazione di monete \`e detta \textit{felice} se con un numero finito di mosse \`e possibile fare in modo che tutte le scatole siano non vuote. Determinare tutte le configurazioni \textit{felici}.
+	\item Un piano è suddiviso con $n$ rette, quante regioni distinte ci
+	sono al massimo? E se ci sono $n$ piani per suddividere in uno spazio?
+
+	\item $n$ interi positivi sono scritti in fila. Ad ogni passaggio, se c'\`e una coppia $(x,y)$ di interi adiacenti con $x>y$ (in quest'ordine da sinistra a destra) pu\`o essere cambiata con la coppia $(y+1,x)$ oppure $(x-1,x)$. Mostrare che sono possibili sono un numero finito di passaggi.
+
+	\item Un grafo orientato (e finito) non contiene cicli. Sia $n$ la
+	massima lunghezza di un cammino lungo il grafo. Dimostrare che $n$ \`e
+	il pi\`u piccolo intero per cui si possono colorari i vertici in $n$
+	colori in modo che $2$ vertici dello stesso colore non siano
+	raggiungibili l'uno a partire dall'altro.
+
+	\item Sono date $n$ scatole contenenti ciascuna una quantit\`a non
+	negativa di monete. Una mossa consiste nel prelevare $2$ monete da una
+	scatola, gettarne via una e riporre l'altra in una scatola a scelta.
+	Una configurazione di monete \`e detta \textit{felice} se con
+	un numero finito di mosse \`e possibile fare in modo che tutte
+	le scatole siano non vuote. Determinare tutte le configurazioni
+	\textit{felici}.
+	
+	\item Determinare tutti gli interi positivi $n,m$ tali per cui \`e possibile tassellare un rettangolo $n \times m$ usando solo tessere ad ``L'' da $4$ quadretti.
+
+	\item Un carico di $100$ lingotti (d'oro $24$ct) tutti da $1$kg sono
+	disposti in $50$ sacchi, nessuno dei quali contiene pi\`u di $50$kg.
+	Dimostrare che i sacchi possono essere divisi in $2$ carichi dello
+	stesso peso.
+
+	\item Dato $n$ intero positivo, sia $P_n=\{2^n,2^{n-1}3,\dots,3^n\}$.
+	Dato un sottoinsieme $Y\subseteq P_n$ denotiamo con $S_Y$ la somma
+	degli elementi di $Y$. Per ogni reale $r$ con $0\leq r \leq 3^{n+1} -
+	2^{n+1}$ dimostrare che esiste $Y\subseteq P_n$ tale che $0\leq r-S_Y
+	\leq 2^n$.
 
 \end{enumerate}
 \bigskip\bigskip
