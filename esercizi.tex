@@ -18,7 +18,7 @@
 
 \newcounter{esercizio}
 \setcounter{esercizio}{0}
-\newcommand{\Ese}{\addtocounter{esercizio}{1}\noindent{\bf Esercizio \arabic{esercizio}. } }
+\newcommand{\Ese}{\addtocounter{esercizio}{1}\vspace{2mm}\noindent{\bf Esercizio \arabic{esercizio}. } }
 
 \newcommand{\Pro}[3]{#1#2 - #3}
 
@@ -42,11 +42,12 @@
 
 \section{Esercizi di base}
 
-%%% Conteggi %%%
+\subsection{Conteggi}
 \Ese Si calcoli il numero dei possibili anagrammi per ognuna delle seguenti parole: caso, casa, satiro, teleologico, pappappero, intirizzito, disossatelo.
 
 \Ese Si calcoli il numero degli anagrammi della parola PERDENTI per ognuna delle condizioni aggiuntive date in tabella.
 
+\medskip
 \begin{tabular}{|l|l|}
 \hline
 senza vocali adiacenti & \phantom{rispostaacasoodelcazzo}\\
@@ -108,43 +109,54 @@ senza consonanti isolate & \\
 
 \Ese Una pedina \`e inizialmente posta nella casella pi\`u a sinistra di uno schema $1\times 3$. Una mossa consiste nello spostare la pedina in una casella che disti al pi\`u $1$ da quella di partenza (eventualmente lasciandola ferma). Detto $s_n$ il numero dei possibili percorsi seguiti dalla pedina che impiegano $n$ mosse, mostrare che $s_{2n} = 2s_n^2+ 2s_{n-1}s_{n+1}$.
 
+\Ese Una pulce saltella da un vertice all'altro di un tetraedro. Calcolare ricorsivamente il numero di modi con cui pu\`o tornare nel vertice di partenza dopo $n$ salti. Fare lo stesso usando un cubo.
+
 \Ese Una stringa \`e composta di $n$ lettere. Quanti sono i possibili anagrammi di questa parola per cui ogni lettera dista al pi\`u $1$ dalla posizione che occupava in origine?
 
 \Ese Una stringa \`e composta di $n$ lettere. Quanti sono i possibili anagrammi di questa parola per cui ogni lettera dista al pi\`u $2$ dalla posizione che occupava in origine? Scrivere una ricorsione in $n$ per il numero $a_n$ dei possibili anagrammi.
 
-%%% Double Counting %%%
+\subsection{Double Counting}
 \Ese Sia $X$ un insieme di $n$ elementi e $Y=\mathcal P (X)$ l'insieme delle sue parti. Calcolare le cardinalit\`a dei seguenti insiemi:
-\begin{itemize}
-	\item $\{(A,B)\in Y^2 : A\cap B = \emptyset\}$
-	\item $\{(A,B,C)\in Y^3 : A\cap B\cap C = \emptyset \wedge A\setminus (B\cup C)=\emptyset\}$
-	\item $\{(A,B)\in Y^2 : |A\cap B|<3 \wedge |(A\cup B)^c|=1\}$
-\end{itemize}
+\begin{align*}
+	& \{(A,B)\in Y^2 : A\cap B = \emptyset\}\\
+	& \{(A,B,C)\in Y^3 : A\cap B\cap C = \emptyset \wedge A\setminus (B\cup C)=\emptyset\}\\
+	& \{(A,B)\in Y^2 : |A\cap B|<3 \wedge |(A\cup B)^c|=1\}
+\end{align*}
 
 \Ese Sia $X$ un insieme di $n$ elementi e $Y=\mathcal P (X)$ l'insieme delle sue parti. Calcolare le seguenti somme:
-\begin{itemize}
-	\item $\sum\limits_{(A,B)\in Y^2} |A\cup B|$
-	\item $\sum\limits_{(A,B,C)\in Y^3} |A\cap B \cap C|$
-	\item $\sum\limits_{(A,B,C)\in Y^3} |A\cap B \cup C^c|$
-	\item $\sum\limits_{(A,B,C)\in Y^3} |A\cap B \cap C|^2$
-\end{itemize}
+\begin{align*}
+	\sum_{(A,B)\in Y^2} |A\cup B| \quad \quad
+	& \sum_{(A,B,C)\in Y^3} |A\cap B \cap C|\\
+	\sum_{(A,B,C)\in Y^3} |A\cap B \cup C^c| \quad \quad
+	& \sum_{(A,B,C)\in Y^3} |A\cap B \cap C|^2
+\end{align*}
 
 \Ese Calcolare le seguenti somme:
-\begin{itemize}
-	\item $\sum\limits_{k=1}^n \binom{n}{k}k^2$
-	\item $\sum\limits_{k=1}^n \binom{n}{k}k^3$
-	\item $\sum\limits_{k=0}^r \binom{n+k}{k}$
-\end{itemize}
+\begin{align*}
+	\sum_{k=1}^n \binom{n}{k}k^2 \quad \quad
+	& \sum_{k=1}^n \binom{n}{k}k^3\\
+	\sum_{k=0}^r \binom{n+k}{k} \quad \quad
+	& \sum_{i=1}^n i(n+1-i)
+\end{align*}
 
 \Ese Dimostrare le seguenti identit\`a:
-\begin{itemize}
-	\item $\binom{n}{k} = \frac n {n-s}\binom{n-1}{k} = \frac n s \binom{n-1}{k-1}$
-	\item $\sum\limits_{k=0}^n \binom{n}{k}^2 = \binom{2n}{n}$
-	\item $\sum\limits_{i=0}^k \binom{n}{i}\binom{m}{k-i} = \binom{m+n}{k}$
-	\item $\sum\limits_{k=0, k\text{ pari}}^n \binom{n}{k} = \sum\limits_{k=1, k\text{ dispari}}^n \binom{n}{k}$
-\end{itemize}
+\begin{align*}
+	\binom{n}{k} = \frac n {n-s} & \binom{n-1}{k} = \frac n s \binom{n-1}{k-1}\\
+	\sum_{k=0}^n \binom{n}{k}^2 & = \binom{2n}{n}\\
+	\sum_{i=0}^k \binom{n}{i}\binom{m}{k-i} & = \binom{m+n}{k}\\
+	\sum_{k=0, k\text{ pari}}^n \binom{n}{k} & = \sum_{k=1, k\text{ dispari}}^n \binom{n}{k}
+\end{align*}
 
-%%% Invarianti %%%
+\Ese Dimostrare che esistono solo $5$ solidi platonici.
+
+\Ese Nella regione di Matelandia ci sono $20$ citt\`a collegate da alcune linee aeree. Ciascuno dei $18$ aerei di linea esistenti visita (periodicamente) $5$ citt\`a distinte in modo consecutivo e fissato. Sappiamo che in ogni citt\`a esistono almeno $3$ aerei che la visitano e che, per ogni coppia di citt\`a, al massimo un aereo le collega direttamente. Dimostrare che, comunque scelta una citt\`a di partenza e una di arrivo, \`e sempre possibile viaggiare dall'una all'altra usando gli aerei di Matelandia.
+
+\Ese Ad uno stage prendono parte $72$ stagisti. Al test iniziale ciascuno risolve almeno un esercizio. Dimostrare che esiste un insieme non vuoto di problemi tale che il numero di stagisti che li ha risolti tutti \`e pari.
+
+\subsection{Invarianti}
 \Ese Si scrivono alla lavagna gli interi da $1$ a $n$ e si effettua la seguente mossa: si scelgono $2$ interi $a$ e $b$, si cancellano, e al loro posto si scrive $|a-b|$. Dire per quali $n$, alla fine si ottiene sempre un numero dispari.
+
+\Ese Un cavallo degli scacchi si muove lungo una scacchiera $47 \times 47$. \`E possibile che riesca a percorrere la scacchiera visitando tutte le caselle una e una sola volta?
 
 \Ese Sui vertici di un $2014$-agono regolare vi sono scritti alcuni numeri interi, all'inizio tutti nulli tranne sui vertici $A_1$ e $A_3$ dove c'\`e un $1$. Una mossa consiste nell'aumentare di $1$ due vertici adiacenti o due vertici opposti. Determinare se esiste una successione finita di mosse che porta ad avere tutti i vertici con lo stesso numero.
 
@@ -158,37 +170,12 @@ senza consonanti isolate & \\
 
 \Ese Sono date $2014$ carte ciascuna con una faccia bianca e una nera. All'inizio sono disposte in fila tutte girate dal lato bianco. Con una mossa si pu\`o scegliere un blocco da $50$ con la pi\`u a sinistra girata sul bianco e capovolgerle tutte. Dimostrare che dopo un po' di mosse non si pu\`o pi\`u eseguirne alcuna.
 
-\Ese Alberto e Barbara giocano al seguente gioco: all'inizio ci sono varie pile di monete sul tavolo e ciascuno, a turno, pu\`o effettuare una mossa a scelta tra \textit{a)} togliere una moneta da una pila, \textit{b)} dividere una pila in $2$ pile ciascuna con almeno una moneta. Quando uno non pu\`o pi\`u fare una mossa, il gioco finisce. Dimostrare che il gioco termina.
-
-%%% Colorazioni %%%
-\Ese \`E possibile formare un rettangolo usando i $6$ trimini del classico tetris?
-
-\Ese Per quali interi positivi $(n,m)$ \`e possibile tassellare un rettangolo $n\times m$ con tessere $1 \times 6$? E usando tessere $1 \times k$?
-
-\Ese Un quadrato $7 \times 7$ \`e ricoperto da $16$ tessere $1 \times 3$ non sovrapposte. In quali caselle pu\`o capitare l'unico buco $1\times 1$ rimanente?
-
-%%% Principio dell'estremale %%%
-\Ese Nel piano sono dati $n$ punti rossi e $n$ punti verdi, a 3 a 3 non allineati. Dimostrare che esistono $n$ segmenti che non si intersecano, ciascuno dei quali congiunge $2$ punti di colore diverso.
-
-\Ese Su tutti i punti a coordinate intere nel piano viene scritto un numero naturale in modo che ciascuno sia la media dei $4$ vicini. Dimostrare che tutti i numeri sono uguali.
-
-\Ese Un numero dispari di cowboy, tutti che giacciono su un piano, si trovano a litigare per un bottino e tutti si sparano vicendevolmente e contemporaneamente, ciascuno puntando al pi\`u vicino (non ci sono muri od ostacoli tra loro e le loro distanze a $2$ a $2$ sono tutte diverse). Dimostrare che almeno uno sopravvive. Dimostrare che i segmenti seguiti dai proiettili non formano alcuna spezzata chiusa.
-
-%%% Altro %%%
-\Ese Dimostrare che esistono solo $5$ solidi platonici.
-
-\Ese Un cavallo degli scacchi si muove lungo una scacchiera $47 \times 47$. \`E possibile che riesca a percorrere la scacchiera visitando tutte le caselle una e una sola volta?
-
-\Ese Una pulce saltella da un vertice all'altro di un tetraedro. Calcolare ricorsivamente il numero di modi con cui pu\`o tornare nel vertice di partenza dopo $n$ salti. Fare lo stesso usando un cubo.
-
-\Ese Calcolare la somma
-$$ \sum_{i=1}^n i(n+1-i) $$
-
-\Ese Nella regione di Matelandia ci sono $20$ citt\`a collegate da alcune linee aeree. Ciascuno dei $18$ aerei di linea esistenti visita (periodicamente) $5$ citt\`a distinte in modo consecutivo e fissato. Sappiamo che in ogni citt\`a esistono almeno $3$ aerei che la visitano e che, per ogni coppia di citt\`a, al massimo un aereo le collega direttamente. Dimostrare che, comunque scelta una citt\`a di partenza e una di arrivo, \`e sempre possibile viaggiare dall'una all'altra usando gli aerei di Matelandia.
-
-\Ese Ad uno stage prendono parte $72$ stagisti. Al test iniziale ciascuno risolve almeno un esercizio. Dimostrare che esiste un insieme non vuoto di problemi tale che il numero di stagisti che li ha risolti tutti \`e pari.
-
-\Ese Un quadrato $6 \times 6$ \`e tassellato con tessere $2 \times 1$. Dimostrare che si pu\`o tagliare in $2$ rettangoli senza tagliare nessuna tessera.
+\Ese Alberto e Barbara giocano al seguente gioco: all'inizio ci sono varie pile di monete sul tavolo e ciascuno, a turno, pu\`o effettuare una mossa a scelta tra
+\begin{enumerate}
+	\item togliere una moneta da una pila
+	\item dividere una pila in $2$ pile ciascuna con almeno una moneta.
+\end{enumerate}
+Quando uno non pu\`o pi\`u fare una mossa, il gioco finisce. Dimostrare che il gioco termina.
 
 \Ese Una scacchiera $8 \times 8$ \`e colorata in bianco e nero al solito modo. Posso applicare le seguenti trasformazioni:
 \begin{itemize}
@@ -200,13 +187,23 @@ Posso ottenere la situazione in cui solo la casella in alto a sinistra \`e nera?
 
 \Ese In un pentagono (convesso) sono tracciate tutte le diagonali. Ad ogni intersezione tra lati o diagonali c'\`e una lampadina, inizialmente accesa. Con una mossa \`e possibile scegliere un segmento (sia lato che diagonale) e cambiare lo stato a tutte le lampadine che si trovano su di esso. \`E possibile spegnerle tutte?
 
-\Ese Sulla lavagna sono scritti alcuni numeri interi. \`E possibile effettuare ripetutamente questa operazione: scelto un numero $x$ gi\`a scritto, si pu\`o aggiungere anche i numeri $2x + 1$ e $\frac x {x+2}$. Ad un certo punto il numero $2010$ \`e scritto sulla lavagna. Dimostrare che c'era fin dall'inizio.
-
-\Ese Un grafo ha almeno un arco. Dimostrare che \`e possibile suddividere i vertici in due sottinsiemi non vuoti $A$ e $B$ tali che il numero di archi che collegano un vertice di $A$ e un vertice di $B$ \`e maggiore di quello di archi che collegano vertici dello stesso sottoinsieme.
-
 \Ese Inizialmente \`e presente un pallino sopra il punto $(0,0)$ del piano. Se c'\`e un pallino sopra il punto $(s,t)$ \`e possibile cancellarlo da $(s,t)$ e aggiungerne uno in $(s+1,t)$ e uno in $(s,t+1)$ (se non c'\`e gi\`a in uno di questi punti). \`E possibile cancellare tutti i pallini dai punti $(x,y)$ con $x+y \leq 3$?
 
-\Ese Una circonferenza \`e divisa in $n$ parti uguali da serbatoi di carburante dove pu\`o rifornirsi un veicolo. Questo, inizialmente a secco, deve percorrere l'intero percorso lungo la circonferenza. Si sa che il carburante totale presente nei serbatoi \`e appena sufficiente per permettere al veicolo di compiere l'intero giro. Dimostrare che esiste un punto da quale il veicolo pu\`o partire tale che riesca effettivamente a fare il giro.
+\subsection{Colorazioni}
+\Ese \`E possibile formare un rettangolo usando i $6$ trimini del classico tetris?
+
+\Ese Per quali interi positivi $(n,m)$ \`e possibile tassellare un rettangolo $n\times m$ con tessere $1 \times 6$? E usando tessere $1 \times k$?
+
+\Ese Un quadrato $7 \times 7$ \`e ricoperto da $16$ tessere $1 \times 3$ non sovrapposte. In quali caselle pu\`o capitare l'unico buco $1\times 1$ rimanente?
+
+\Ese Un quadrato $6 \times 6$ \`e tassellato con tessere $2 \times 1$. Dimostrare che si pu\`o tagliare in $2$ rettangoli senza tagliare nessuna tessera.
+
+\subsection{Principio dell'estremale}
+\Ese Nel piano sono dati $n$ punti rossi e $n$ punti verdi, a 3 a 3 non allineati. Dimostrare che esistono $n$ segmenti che non si intersecano, ciascuno dei quali congiunge $2$ punti di colore diverso.
+
+\Ese Su tutti i punti a coordinate intere nel piano viene scritto un numero naturale in modo che ciascuno sia la media dei $4$ vicini. Dimostrare che tutti i numeri sono uguali.
+
+\Ese Un numero dispari di cowboy, tutti che giacciono su un piano, si trovano a litigare per un bottino e tutti si sparano vicendevolmente e contemporaneamente, ciascuno puntando al pi\`u vicino (non ci sono muri od ostacoli tra loro e le loro distanze a $2$ a $2$ sono tutte diverse). Dimostrare che almeno uno sopravvive. Dimostrare che i segmenti seguiti dai proiettili non formano alcuna spezzata chiusa.
 
 \section{Combinatoria 1}
 
@@ -338,6 +335,10 @@ Posso ottenere la situazione in cui solo la casella in alto a sinistra \`e nera?
 	\item Sono date $n$ scatole contenenti ciascuna una quantit\`a non negativa di monete. Una mossa consiste nel prelevare $2$ monete da una scatola, gettarne via una e riporre l'altra in una scatola a scelta. Una configurazione di monete \`e detta \textit{felice} se con un numero finito di mosse \`e possibile fare in modo che tutte le scatole siano non vuote. Determinare tutte le configurazioni \textit{felici}.
 	
 	\item Determinare tutti gli interi positivi $n,m$ tali per cui \`e possibile tassellare un rettangolo $n \times m$ usando solo tessere ad ``L'' da $4$ quadretti.
+
+	\item Un grafo ha almeno un arco. Dimostrare che \`e possibile suddividere i vertici in due sottinsiemi non vuoti $A$ e $B$ tali che il numero di archi che collegano un vertice di $A$ e un vertice di $B$ \`e maggiore di quello di archi che collegano vertici dello stesso sottoinsieme.
+
+	\item Una circonferenza \`e divisa in $n$ parti uguali da serbatoi di carburante dove pu\`o rifornirsi un veicolo. Questo, inizialmente a secco, deve percorrere l'intero percorso lungo la circonferenza. Si sa che il carburante totale presente nei serbatoi \`e appena sufficiente per permettere al veicolo di compiere l'intero giro. Dimostrare che esiste un punto dal quale il veicolo pu\`o partire tale che riesca effettivamente a fare il giro.
 
 	\item Un carico di $100$ lingotti (d'oro $24$ct) tutti da $1$kg sono disposti in $50$ sacchi, nessuno dei quali contiene pi\`u di $50$kg. Dimostrare che i sacchi possono essere divisi in $2$ carichi dello stesso peso.
 
