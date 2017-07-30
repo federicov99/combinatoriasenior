@@ -139,6 +139,7 @@ senza consonanti isolate & \\
 \begin{itemize}
 	\item $\binom{n}{k} = \frac n {n-s}\binom{n-1}{k} = \frac n s \binom{n-1}{k-1}$
 	\item $\sum\limits_{k=0}^n \binom{n}{k}^2 = \binom{2n}{n}$
+	\item $\sum\limits_{i=0}^k \binom{n}{i}\binom{m}{k-i} = \binom{m+n}{k}$
 	\item $\sum\limits_{k=0, k\text{ pari}}^n \binom{n}{k} = \sum\limits_{k=1, k\text{ dispari}}^n \binom{n}{k}$
 \end{itemize}
 
@@ -153,7 +154,7 @@ senza consonanti isolate & \\
 
 \Ese In ogni vertice di un $n$-agono regolare c'\`e una pedina e con una mossa se ne possono scegliere $2$ qualsiasi e spostarne una in un senso e l'altra in quello contrario. \`E possibile portarle in un unico vertice?
 
-\Ese In ogni vertice di un $n$-agono regolare ci sono alcune pedine. Su un vertice ce n'è una, su quello successivo $2$, su quello ulteriore $3$ e così via fino all'ultimo dove ce ne sono $n$. Ancora una volta con una mossa si possono scegliere $2$ qualsiasi pedine e spostarne una in un senso e l'altra in quello contrario. In quali vertici \`e possibile spostarle tutte?
+\Ese In ogni vertice di un $n$-agono regolare ci sono alcune pedine. Su un vertice ce n'\`e una, su quello successivo $2$, su quello ulteriore $3$ e cos\`\i via fino all'ultimo dove ce ne sono $n$. Ancora una volta con una mossa si possono scegliere $2$ qualsiasi pedine e spostarne una in un senso e l'altra in quello contrario. In quali vertici \`e possibile spostarle tutte?
 
 \Ese Sono date $2014$ carte ciascuna con una faccia bianca e una nera. All'inizio sono disposte in fila tutte girate dal lato bianco. Con una mossa si pu\`o scegliere un blocco da $50$ con la pi\`u a sinistra girata sul bianco e capovolgerle tutte. Dimostrare che dopo un po' di mosse non si pu\`o pi\`u eseguirne alcuna.
 
@@ -173,6 +174,39 @@ senza consonanti isolate & \\
 
 \Ese Un numero dispari di cowboy, tutti che giacciono su un piano, si trovano a litigare per un bottino e tutti si sparano vicendevolmente e contemporaneamente, ciascuno puntando al pi\`u vicino (non ci sono muri od ostacoli tra loro e le loro distanze a $2$ a $2$ sono tutte diverse). Dimostrare che almeno uno sopravvive. Dimostrare che i segmenti seguiti dai proiettili non formano alcuna spezzata chiusa.
 
+%%% Altro %%%
+\Ese Dimostrare che esistono solo $5$ solidi platonici.
+
+\Ese Un cavallo degli scacchi si muove lungo una scacchiera $47 \times 47$. \`E possibile che riesca a percorrere la scacchiera visitando tutte le caselle una e una sola volta?
+
+\Ese Una pulce saltella da un vertice all'altro di un tetraedro. Calcolare ricorsivamente il numero di modi con cui pu\`o tornare nel vertice di partenza dopo $n$ salti. Fare lo stesso usando un cubo.
+
+\Ese Calcolare la somma
+$$ \sum_{i=1}^n i(n+1-i) $$
+
+\Ese Nella regione di Matelandia ci sono $20$ citt\`a collegate da alcune linee aeree. Ciascuno dei $18$ aerei di linea esistenti visita (periodicamente) $5$ citt\`a distinte in modo consecutivo e fissato. Sappiamo che in ogni citt\`a esistono almeno $3$ aerei che la visitano e che, per ogni coppia di citt\`a, al massimo un aereo le collega direttamente. Dimostrare che, comunque scelta una citt\`a di partenza e una di arrivo, \`e sempre possibile viaggiare dall'una all'altra usando gli aerei di Matelandia.
+
+\Ese Ad uno stage prendono parte $72$ stagisti. Al test iniziale ciascuno risolve almeno un esercizio. Dimostrare che esiste un insieme non vuoto di problemi tale che il numero di stagisti che li ha risolti tutti \`e pari.
+
+\Ese Un quadrato $6 \times 6$ \`e tassellato con tessere $2 \times 1$. Dimostrare che si pu\`o tagliare in $2$ rettangoli senza tagliare nessuna tessera.
+
+\Ese Una scacchiera $8 \times 8$ \`e colorata in bianco e nero al solito modo. Posso applicare le seguenti trasformazioni:
+\begin{itemize}
+	\item scegliere una riga e invertire il colore di tutte le sue caselle,
+	\item scegliere una colonna e invertire il colore di tutte le sue caselle,
+	\item scegliere un quadrato $2 \times 2$ e invertire il colore di tutte le sue caselle.
+\end{itemize}
+Posso ottenere la situazione in cui solo la casella in alto a sinistra \`e nera?
+
+\Ese In un pentagono (convesso) sono tracciate tutte le diagonali. Ad ogni intersezione tra lati o diagonali c'\`e una lampadina, inizialmente accesa. Con una mossa \`e possibile scegliere un segmento (sia lato che diagonale) e cambiare lo stato a tutte le lampadine che si trovano su di esso. \`E possibile spegnerle tutte?
+
+\Ese Sulla lavagna sono scritti alcuni numeri interi. \`E possibile effettuare ripetutamente questa operazione: scelto un numero $x$ gi\`a scritto, si pu\`o aggiungere anche i numeri $2x + 1$ e $\frac x {x+2}$. Ad un certo punto il numero $2010$ \`e scritto sulla lavagna. Dimostrare che c'era fin dall'inizio.
+
+\Ese Un grafo ha almeno un arco. Dimostrare che \`e possibile suddividere i vertici in due sottinsiemi non vuoti $A$ e $B$ tali che il numero di archi che collegano un vertice di $A$ e un vertice di $B$ \`e maggiore di quello di archi che collegano vertici dello stesso sottoinsieme.
+
+\Ese Inizialmente \`e presente un pallino sopra il punto $(0,0)$ del piano. Se c'\`e un pallino sopra il punto $(s,t)$ \`e possibile cancellarlo da $(s,t)$ e aggiungerne uno in $(s+1,t)$ e uno in $(s,t+1)$ (se non c'\`e gi\`a in uno di questi punti). \`E possibile cancellare tutti i pallini dai punti $(x,y)$ con $x+y \leq 3$?
+
+\Ese Una circonferenza \`e divisa in $n$ parti uguali da serbatoi di carburante dove pu\`o rifornirsi un veicolo. Questo, inizialmente a secco, deve percorrere l'intero percorso lungo la circonferenza. Si sa che il carburante totale presente nei serbatoi \`e appena sufficiente per permettere al veicolo di compiere l'intero giro. Dimostrare che esiste un punto da quale il veicolo pu\`o partire tale che riesca effettivamente a fare il giro.
 
 \section{Combinatoria 1}
 
@@ -291,15 +325,15 @@ senza consonanti isolate & \\
 
 	Nel mese di gennaio, lo gnomo Gennaio va a trovare tutti i suoi amici.  Se nota che la maggioranza stretta dei suoi amici ha la casetta di un colore diverso dalla sua, allora entro la fine del mese egli ridipinge la sua casetta, cambiando il colore per ``adeguarsi alla maggioranza degli altri''.
 
-	Nel mese di febbraio, tocca allo gnome Febbraio fare visita ai suoi amici ed eventualmente ridipingere la casetta per ``adeguarsi alla maggioranza'', e cos\`{\i} via.
+	Nel mese di febbraio, tocca allo gnomo Febbraio fare visita ai suoi amici ed eventualmente ridipingere la casetta per ``adeguarsi alla maggioranza'', e cos\`{\i} via.
 
 	Questa procedura si ripete di anno in anno.  Si dimostri che, da un certo momento in poi, nessuno gnomo avr\`{a} pi\`{u} bisogno di ridipingere la sua casetta (si supponga l'amicizia simmetrica, e che ogni gnomo non includa se stesso nella lista dei suoi amici).
 
-	\item Un piano è suddiviso con $n$ rette, quante regioni distinte ci sono al massimo? E se ci sono $n$ piani per suddividere in uno spazio?
+	\item Un piano \`e suddiviso con $n$ rette, quante regioni distinte ci sono al massimo? E se ci sono $n$ piani per suddividere in uno spazio?
 
 	\item $n$ interi positivi sono scritti in fila. Ad ogni passaggio, se c'\`e una coppia $(x,y)$ di interi adiacenti con $x>y$ (in quest'ordine da sinistra a destra) pu\`o essere cambiata con la coppia $(y+1,x)$ oppure $(x-1,x)$. Mostrare che sono possibili sono un numero finito di passaggi.
 
-	\item Un grafo orientato (e finito) non contiene cicli. Sia $n$ la massima lunghezza di un cammino lungo il grafo. Dimostrare che $n$ \`e il pi\`u piccolo intero per cui si possono colorari i vertici in $n$ colori in modo che $2$ vertici dello stesso colore non siano raggiungibili l'uno a partire dall'altro.
+	\item Un grafo orientato (e finito) non contiene cicli. Sia $n$ la massima lunghezza di un cammino lungo il grafo. Dimostrare che $n$ \`e il pi\`u piccolo intero per cui si possono colorare i vertici in $n$ colori in modo che $2$ vertici dello stesso colore non siano raggiungibili l'uno a partire dall'altro.
 
 	\item Sono date $n$ scatole contenenti ciascuna una quantit\`a non negativa di monete. Una mossa consiste nel prelevare $2$ monete da una scatola, gettarne via una e riporre l'altra in una scatola a scelta. Una configurazione di monete \`e detta \textit{felice} se con un numero finito di mosse \`e possibile fare in modo che tutte le scatole siano non vuote. Determinare tutte le configurazioni \textit{felici}.
 	
