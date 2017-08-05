@@ -1,0 +1,80 @@
+\documentclass[a4paper,10pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+
+%%% Comandi per far funzionare la catalogazione dei problemi %%%
+\usepackage{substr}
+\usepackage{etoolbox}
+
+\newcount\problemi
+\problemi=0
+
+% Comando per registrare un nuovo problema
+\newcommand{\Problema}[2]{%
+	\expandafter\def\csname Id\the\problemi\endcsname{#1}
+	\expandafter\def\csname Tags\the\problemi\endcsname{#2}
+	\advance\problemi by 1
+}
+
+% Comandi privati
+\newcount\it
+% print long version of the #1-th \Problema
+\newcommand{\PrintLong}[1]{%
+	Id:\csname Id\the#1\endcsname\\
+	Tags:\csname Tags\the#1\endcsname\\[5mm]
+}
+% print only identification of the #1-th \Problema
+\newcommand{\PrintShort}[1]{%
+	\csname Id\the#1\endcsname ,
+}
+\newcommand{\PrintTag}[1]{%
+	\subsection{#1}
+	\it=0%
+	\loop
+		\def\listoftags{\csname Tags\the\it\endcsname}%
+		\IfSubStringInString{#1}{\listoftags}
+		{\PrintShort{\it}}\relax%
+		\advance\it by 1
+	\ifnum\it < \the\problemi
+	\repeat
+}
+
+% Comandi pubblici
+\newcommand{\PerId}{%
+	\it=0%
+	\loop
+		\PrintLong{\it}
+		\advance\it by 1
+	\ifnum\it < \the\problemi
+	\repeat
+}
+\newcommand{\PerTag}{%
+	\forcsvlist{\PrintTag}{tag1,tag2,tag3,tag4,tag5}
+}
+
+
+
+%%% Introdurre qui i problemi %%%
+%
+% in questa forma:
+%\Problema{id}{tags}
+%
+
+\Problema{primo}{tag1,tag3}
+\Problema{secondo}{tag4,tag3}
+\Problema{terzo}{tag5,tag2,tag1}
+
+
+%%% Nel documento non dovrebbe servire toccare nulla %%%
+\setcounter{secnumdepth}{0}
+\begin{document}
+\section{Per tag}
+\PerTag
+\section{Per id}
+\PerId
+\end{document}
