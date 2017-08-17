@@ -9,15 +9,19 @@
 
 %%% Comandi per far funzionare la catalogazione dei problemi %%%
 \usepackage{substr}
+\usepackage{xstring}
 \usepackage{etoolbox}
 
 \newcount\problemi
 \problemi=0
 
 % Comando per registrare un nuovo problema
-\newcommand{\Problema}[2]{%
-	\expandafter\def\csname Id\the\problemi\endcsname{#1}
-	\expandafter\def\csname Tags\the\problemi\endcsname{#2}
+\newcommand{\Problema}[5]{%
+	\expandafter\def\csname Gara\the\problemi\endcsname{#1}
+	\expandafter\def\csname Anno\the\problemi\endcsname{#2}
+	\expandafter\def\csname Numero\the\problemi\endcsname{#3}
+	\expandafter\def\csname Tags\the\problemi\endcsname{#4}
+	\expandafter\def\csname Commento\the\problemi\endcsname{#5}
 	\advance\problemi by 1
 }
 
@@ -25,12 +29,13 @@
 \newcount\it
 % print long version of the #1-th \Problema
 \newcommand{\PrintLong}[1]{%
-	Id:\csname Id\the#1\endcsname\\
-	Tags:\csname Tags\the#1\endcsname\\[5mm]
+	Problema: \csname Gara\the#1\endcsname \csname Anno\the#1\endcsname\ - \csname Numero\the#1\endcsname\\
+	Tags: \csname Tags\the#1\endcsname\\
+	Commento: \csname Commento\the#1\endcsname\\[5mm]
 }
 % print only identification of the #1-th \Problema
 \newcommand{\PrintShort}[1]{%
-	\csname Id\the#1\endcsname ,
+	\csname Gara\the#1\endcsname\StrRight{\csname Anno\the#1\endcsname}{2} -\csname Numero\the#1\endcsname ,
 }
 \newcommand{\PrintTag}[1]{%
 	\subsection{#1}
@@ -54,7 +59,7 @@
 	\repeat
 }
 \newcommand{\PerTag}{%
-	\forcsvlist{\PrintTag}{tag1,tag2,tag3,tag4,tag5}
+	\forcsvlist{\PrintTag}{esistenza,nonesistenza,costruttivo,conteggi,doublecounting,pigeonhole,invarianti,colorazioni,estremale,algoritmi,geometrico,grafi,gioco}
 }
 
 
@@ -62,12 +67,16 @@
 %%% Introdurre qui i problemi %%%
 %
 % in questa forma:
-%\Problema{id}{tags}
+%\Problema{gara}{anno}{numero}{tags}{commento}
 %
+% i tag previsti sono:
+% 'esistenza' (eventualmente 'costruttivo') e/o 'nonesistenza'
+% 'conteggi', 'doublecounting', 'pigeonhole', 'invarianti', 'colorazioni', 'estremale', 'algoritmi'
+% 'geometrico', 'grafi', 'gioco'
 
-\Problema{primo}{tag1,tag3}
-\Problema{secondo}{tag4,tag3}
-\Problema{terzo}{tag5,tag2,tag1}
+\Problema{IMOSL}{2016}{1}
+{esistenza,costruttivo,nonesistenza,conteggi}
+{}
 
 
 %%% Nel documento non dovrebbe servire toccare nulla %%%
