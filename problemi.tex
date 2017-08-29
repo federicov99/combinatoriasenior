@@ -35,7 +35,7 @@
 }
 % print only identification of the #1-th \Problema
 \newcommand{\PrintShort}[1]{%
-	\csname Gara\the#1\endcsname\StrRight{\csname Anno\the#1\endcsname}{2} -\csname Numero\the#1\endcsname ,
+	\csname Gara\the#1\endcsname\StrRight{\csname Anno\the#1\endcsname}{2} .\csname Numero\the#1\endcsname ,
 }
 \newcommand{\PrintTag}[1]{%
 	\subsection{#1}
@@ -59,7 +59,7 @@
 	\repeat
 }
 \newcommand{\PerTag}{%
-	\forcsvlist{\PrintTag}{esistenza,nonesistenza,costruttivo,conteggi,doublecounting,pigeonhole,invarianti,colorazioni,estremale,algoritmi,geometrico,grafi,gioco}
+	\forcsvlist{\PrintTag}{esistenza,nonesistenza,costruttivo,conteggi,doublecounting,pigeonhole,invarianti,colorazioni,estremale,algoritmi,geometrico,grafi,gioco,tabelle}
 }
 
 
