@@ -31,7 +31,7 @@ In qualche punto tra qui e C2 andrebbe inserita una minima trattazione della pro
 \begin{enumerate}
 	\item Prodotto: i casi sono indipendenti (permutazioni, disposizioni, combinazioni e coefficienti binomiali).
 	\item Somma: i casi sono disgiunti (dividere in casi più semplici, principio inclusione-esclusione, funzioni bigettive e permutazioni senza punti fissi).
-	\item Bigezione: ricondurre un conteggio ad un altro (percorsi monotoni e molti altri esempi).
+	\item Bigezione: ricondurre un conteggio ad un altro (percorsi monotoni, Catalan e molti altri esempi).
 	\item Ricorsione: un conteggio si spezza in sottoproblemi uguali (Fibonacci, stringhe con richieste da espressione regolare, cammini su grafi; ottenere ricorsione algebrica lineare).
 \end{enumerate}
 
@@ -46,41 +46,43 @@ Si usano quando ci sono delle mosse che variano qualcosa. Invarianti che non var
 Esempi di colorazioni, specialmente scacchiera, a strisce verticali e oblique. Vari esempi.
 
 \subsection{Principio dell'estremale}
-Esempi su grafi (esistenza di foglie su un albero, esistenza di cammini euleriani, Dilworth versione facile su grafo diretto, esempi). Qualche esempio di combinatoria geometrica (collegare n punti rossi ad n punti blu con n segmenti e senza intersezioni, Sylvester).
+Esempi su grafi (esistenza di foglie su un albero, esistenza di cammini euleriani, Dilworth versione facile su grafo diretto, esempi). Qualche esempio di combinatoria geometrica (collegare $n$ punti rossi ad $n$ punti blu con $n$ segmenti e senza intersezioni, teorema di Sylvester).
 
 
 
 \section{Medium}
 \subsection{Prerequisiti}
-I contenuti del basic. Sarebbe bello elencare degli esercizi (presi per esempio dai test iniziali) per fornire un facile autocheck per aiutare gli stagisti a decidere il proprio livello.
+I contenuti del Basic. Sarebbe bello elencare degli esercizi (presi per esempio dai test iniziali) per fornire un facile autocheck per aiutare gli stagisti a decidere il proprio livello.
 
 In ogni caso serve sapere che i problemi in cui l'incognita è determinare massimo/minimo di qualcosa si suddividono in due sottoproblemi distinti: uno di esistenza e uno di non esistenza.
 
 
 \subsection{C1: Tecniche di non esistenza}
-Invarianti, colorazioni, double-counting con disuguaglianze (stime).
-
+Prevalentemente double-counting con disuguaglianze e stime. Eventualmente anche altre tecniche di non esistenza (colorazioni e invarianti complicate) oppure esempi di come convertire problemi di esistenza in non esistenza e viceversa (come problemi dove è richiesto di dimostrare l'esistenza di un oggetto e, procedendo per assurdo, si ottiene una situazione che si vuole dimostrare non esista). Programma pensato per una mezza lezione al posto di quella P.
 
 \subsection{C2: Tecniche di esistenza non costruttiva}
-Pigeonhole con le dovute stime, teoria di Ramsey; principio dell'estremale; supporre per assurdo la non esistenza (giochi con furto della strategia).
+Principio dell'estremale, in particolare esempi di combinatoria geometrica (ma non solo); pigeonhole e teoria di Ramsey. Altra teoria sui grafi: lemma di Hall (e suo lemma ausiliario), volendo anche teoremi di Koenig, Dilworth (nelle due versioni), purché non si vogliano fare all'Advanced.
 
 
 \subsection{C3: Tecniche di esistenza costruttiva}
-Algoritmi greedy (problema di Turan), costruzioni induttive (lemma di Hall e suo lemma ausiliario), esempi caratteristici e un po' ricorrenti (giochi con accoppiamento delle mosse).
+Algoritmi, per esempio tecniche greedy, problema di Turan. Esempi di costruzioni induttive, anche sui grafi (dai più semplici come archi in un albero e grafi bipartiti ad esempi più complicati). Teoria generale sui giochi e tecnica dell'accoppiamento delle mosse in giochi (ed esempi, come il Nim). Tanti esempi di problemi dove la costruzione è la parte più importante.
 
 
 
 \section{Advanced}
 \subsection{Prerequisiti}
-Sapere le tecniche del medium. Anche qui stesso discorso sugli esercizi (potrebbero essere semplicemente tutte le domande di combinatoria del test iniziale).
+Sapere le tecniche del Medium. Anche qui stesso discorso sugli esercizi (potrebbero essere semplicemente tutte le domande di combinatoria del test iniziale).
 
 \subsection{Argomenti}
 \begin{itemize}
-	\item Funzioni generatrici e snake oil method per risolvere conteggi o uguaglianze combinatoriche complicati.
+	\item Funzioni generatrici, root of unity filter e snake oil method per risolvere conteggi o uguaglianze combinatoriche complicati, come numeri di Stirling, somme delle potenze $k$-esime degli interi.
 	\item Combinatorial Nullstellensatz (e Cauchy-Davenport, Chevalley-Warning).
-	\item Teoremi su grafi, flussi e matching (Konig, Menger, maxflow-mincut, Sperner e simili).
+	\item Teoremi su grafi, flussi e matching (maxflow-mincut e conseguenze come Konig, Menger, Dilworth difficile, Sperner), purché non siano fatti al Medium.
 	\item Metodi probabilistici in combinatoria (stime dal basso dei Ramsey, Turan con le anticricche).
 	\item Algebra lineare molto elementare (con applicazioni su grafi).
+	\item Esempi di invarianti molto complicate e double-counting visionari.
+	\item Esempi di costruzioni complicate, ma esplicite o perlomeno operative.
+	\item Idee probabilistiche sviluppate con double-counting e pigeonhole.
 \end{itemize}
 
 
